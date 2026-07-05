@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prashansa Pawar — Author, Founder & CEO</title>
+  <meta name="description" content="Modern premium personal brand website for Prashansa Pawar — author, founder, and business leader." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#F8F5EF',
+            surface: '#FFFDF8',
+            cream: '#F1E9DC',
+            gold: '#B59A67',
+            brown: '#1F1814',
+            muted: '#6F655D',
+            line: 'rgba(31,24,20,.10)'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Instrument Serif', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(31,24,20,.06)',
+            lift: '0 24px 60px rgba(31,24,20,.10)'
+          },
+          letterSpacing: {
+            luxe: '.18em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: #1F1814;
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(181,154,103,.12), transparent 32%),
+        radial-gradient(circle at right 20%, rgba(31,24,20,.05), transparent 30%),
+        linear-gradient(180deg, #FFFDF8 0%, #F8F5EF 100%);
+    }
+    .serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .grid-bg {
+      background-image:
+        linear-gradient(to right, rgba(31,24,20,.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(31,24,20,.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.18), transparent 85%);
+      pointer-events: none;
+    }
+    .glass {
+      backdrop-filter: blur(16px);
+      background: rgba(255,253,248,.82);
+    }
+    .card {
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(31,24,20,.08);
+      box-shadow: 0 12px 34px rgba(31,24,20,.06);
+    }
+    .kicker {
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .74rem;
+      font-weight: 700;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .btn-dark {
+      background: #1F1814;
+      color: #FFFDF8;
+      transition: all .25s ease;
+    }
+    .btn-dark:hover { background: #B59A67; transform: translateY(-1px); }
+    .btn-light {
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(31,24,20,.12);
+      transition: all .25s ease;
+    }
+    .btn-light:hover { border-color: rgba(181,154,103,.7); transform: translateY(-1px); }
+    .section-border { border-top: 1px solid rgba(31,24,20,.08); }
+    .soft-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(181,154,103,.8), transparent); }
+    .pill {
+      border: 1px solid rgba(31,24,20,.10);
+      background: rgba(255,255,255,.55);
+    }
+    .field {
+      border: 1px solid rgba(31,24,20,.10);
+      background: rgba(255,255,255,.80);
+      outline: none;
+      transition: box-shadow .25s ease, border-color .25s ease;
+    }
+    .field:focus {
+      border-color: rgba(181,154,103,.78);
+      box-shadow: 0 0 0 4px rgba(181,154,103,.12);
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="fixed inset-0 grid-bg opacity-70"></div>
+
+  <header class="sticky top-0 z-50 border-b border-line glass">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="h-20 flex items-center justify-between gap-4">
+        <a href="#home" class="flex items-center gap-3 shrink-0">
+          <div class="w-11 h-11 rounded-full border border-[rgba(181,154,103,.45)] flex items-center justify-center serif text-2xl text-gold">P</div>
+          <div>
+            <div class="serif text-2xl leading-none">Prashansa Pawar</div>
+            <div class="text-[11px] uppercase tracking-luxe text-muted mt-1">Author • Founder • CEO</div>
+          </div>
+        </a>
+
+        <nav class="hidden xl:flex items-center gap-8 text-sm text-brown/80">
+          <a class="hover:text-gold transition" href="#about">About</a>
+          <a class="hover:text-gold transition" href="#work">Work</a>
+          <a class="hover:text-gold transition" href="#services">Services</a>
+          <a class="hover:text-gold transition" href="#credibility">Credibility</a>
+          <a class="hover:text-gold transition" href="#contact">Contact</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#contact" class="px-5 py-3 rounded-full btn-light text-sm font-medium">Book a Consultation</a>
+          <a href="#work" class="px-5 py-3 rounded-full btn-dark text-sm font-medium">Explore Work</a>
+        </div>
+
+        <button id="menuBtn" class="xl:hidden w-11 h-11 rounded-full border border-line flex items-center justify-center" aria-label="Open menu">
+          <span class="sr-only">Menu</span>
+          <div class="space-y-1.5">
+            <span class="block w-5 h-[1.5px] bg-brown"></span>
+            <span class="block w-5 h-[1.5px] bg-brown"></span>
+            <span class="block w-5 h-[1.5px] bg-brown"></span>
+          </div>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden xl:hidden pb-5">
+        <div class="grid gap-3 text-sm text-brown/80 border-t border-line pt-4">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#credibility">Credibility</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="relative">
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gold/10 blur-3xl"></div>
+        <div class="absolute top-24 right-0 w-80 h-80 rounded-full bg-brown/5 blur-3xl"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-14 lg:pt-20 pb-20 lg:pb-28 relative">
+        <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-10 lg:gap-14 items-center">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-3 pill rounded-full px-4 py-2 text-xs sm:text-sm text-brown/75 mb-7">
+              <span class="w-2 h-2 rounded-full bg-gold"></span>
+              Premium personal brand for a modern author and founder
+            </div>
+            <h1 class="serif text-[clamp(3.6rem,9vw,8rem)] leading-[0.9] tracking-tight max-w-4xl">
+              Modern credibility,
+              <span class="italic text-gold">built to convert.</span>
+            </h1>
+            <p class="mt-7 text-lg sm:text-xl text-muted leading-8 max-w-2xl">
+              Prashansa Pawar is an author, founder, and business leader with a sharp point of view on branding, leadership, and communication. This site is designed to make her look established, premium, and unmistakably credible.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="#contact" class="px-7 py-4 rounded-full btn-dark font-medium inline-flex justify-center">Work With Prashansa</a>
+              <a href="#work" class="px-7 py-4 rounded-full btn-light font-medium inline-flex justify-center">See Featured Work</a>
+            </div>
+
+            <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+              <div class="card rounded-3xl p-5">
+                <div class="text-3xl serif">Author</div>
+                <div class="text-sm text-muted mt-2">Writing with authority, clarity, and point of view.</div>
+              </div>
+              <div class="card rounded-3xl p-5">
+                <div class="text-3xl serif">Founder</div>
+                <div class="text-sm text-muted mt-2">Leading The Life Guidance Center with structure and intent.</div>
+              </div>
+              <div class="card rounded-3xl p-5">
+                <div class="text-3xl serif">CEO</div>
+                <div class="text-sm text-muted mt-2">Business credibility grounded in real leadership.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal lg:justify-self-end">
+            <div class="relative max-w-xl ml-auto">
+              <div class="absolute -top-6 -left-6 w-24 h-24 rounded-3xl bg-gold/15 blur-2xl"></div>
+              <div class="card rounded-[32px] p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-[radial-gradient(circle,rgba(181,154,103,.16),transparent_70%)]"></div>
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <div class="kicker text-gold">Positioning</div>
+                    <h2 class="serif text-4xl sm:text-5xl leading-none mt-3 max-w-sm">Editorial polish. Strategic depth. Calm authority.</h2>
+                  </div>
+                  <div class="hidden sm:flex w-14 h-14 rounded-full border border-[rgba(181,154,103,.45)] items-center justify-center text-gold">↗</div>
+                </div>
+
+                <div class="mt-8 soft-divider"></div>
+
+                <div class="mt-8 grid gap-4">
+                  <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/65 border border-line">
+                    <div class="w-10 h-10 rounded-full border border-[rgba(181,154,103,.45)] flex items-center justify-center text-gold text-sm">01</div>
+                    <div>
+                      <div class="font-semibold">Premium messaging</div>
+                      <p class="text-sm text-muted mt-1">Clear, sharp, and built to strengthen trust fast.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/65 border border-line">
+                    <div class="w-10 h-10 rounded-full border border-[rgba(181,154,103,.45)] flex items-center justify-center text-gold text-sm">02</div>
+                    <div>
+                      <div class="font-semibold">Business leadership</div>
+                      <p class="text-sm text-muted mt-1">A founder profile that feels serious and commercially aware.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/65 border border-line">
+                    <div class="w-10 h-10 rounded-full border border-[rgba(181,154,103,.45)] flex items-center justify-center text-gold text-sm">03</div>
+                    <div>
+                      <div class="font-semibold">Modern luxury</div>
+                      <p class="text-sm text-muted mt-1">Minimal, elevated, and intentionally restrained.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="py-4 border-y border-line overflow-hidden bg-white/45">
+      <div class="whitespace-nowrap animate-[marquee_18s_linear_infinite] text-sm sm:text-base text-brown/70">
+        <span class="mx-8">Author</span>
+        <span class="mx-8">Founder & CEO</span>
+        <span class="mx-8">Brand Strategy</span>
+        <span class="mx-8">Leadership</span>
+        <span class="mx-8">Writing</span>
+        <span class="mx-8">Consulting</span>
+        <span class="mx-8">Premium Personal Brand</span>
+        <span class="mx-8">Author</span>
+        <span class="mx-8">Founder & CEO</span>
+        <span class="mx-8">Brand Strategy</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-start reveal">
+          <div>
+            <div class="kicker text-gold mb-4">About</div>
+            <h2 class="serif text-4xl sm:text-5xl leading-none max-w-sm">A modern brand with real substance.</h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 text-[17px] leading-8 text-brown/85">
+            <p>
+              Prashansa Pawar is an author, founder, and businesswoman whose strength sits in the overlap between writing, branding, and leadership. Her voice should feel intelligent, selective, and impossible to confuse with generic corporate content.
+            </p>
+            <p>
+              As the founder and CEO of The Life Guidance Center, she brings a grounded, credible lens to growth and communication. The result should feel premium and confident — designed for people who care about taste, trust, and clarity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="py-20 lg:py-28 bg-cream/70 section-border">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+          <div>
+            <div class="kicker text-gold mb-4">Featured work</div>
+            <h2 class="serif text-4xl sm:text-5xl leading-none">Curated work that positions her as a serious authority.</h2>
+          </div>
+          <p class="text-muted max-w-2xl leading-8">
+            Use this section to showcase books, essays, columns, talks, or founder-led writing in a way that feels selective and premium.
+          </p>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-12 gap-6 reveal">
+          <article class="card rounded-[28px] p-7 lg:col-span-7">
+            <div class="flex items-start justify-between gap-6">
+              <div>
+                <div class="text-gold text-xs uppercase tracking-luxe">Featured Book</div>
+                <h3 class="serif text-3xl sm:text-4xl mt-3">The Quiet Power of Clear Thinking</h3>
+              </div>
+              <div class="hidden sm:block text-muted text-sm">01</div>
+            </div>
+            <p class="mt-5 text-muted leading-8 max-w-2xl">
+              A premium book concept focused on leadership, communication, and decision-making. The messaging here should feel sharp, intelligent, and selective rather than overexplained.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3 text-sm text-brown/75">
+              <span class="pill rounded-full px-4 py-2">Leadership</span>
+              <span class="pill rounded-full px-4 py-2">Writing</span>
+              <span class="pill rounded-full px-4 py-2">Thoughtfulness</span>
+            </div>
+          </article>
+
+          <div class="lg:col-span-5 grid gap-6">
+            <article class="card rounded-[28px] p-7">
+              <div class="text-gold text-xs uppercase tracking-luxe">Essay / Column</div>
+              <h3 class="serif text-3xl mt-3">Branding With Integrity</h3>
+              <p class="mt-4 text-muted leading-8">Opinion-led writing on trust, clarity, and why premium brands feel calm, not loud.</p>
+            </article>
+            <article class="card rounded-[28px] p-7">
+              <div class="text-gold text-xs uppercase tracking-luxe">Founder Notes</div>
+              <h3 class="serif text-3xl mt-3">Leadership Notes from The Life Guidance Center</h3>
+              <p class="mt-4 text-muted leading-8">A framework for communication and guidance that reflects real-world business judgment.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <div class="kicker text-gold mb-4">Services</div>
+          <h2 class="serif text-4xl sm:text-5xl leading-none">Premium offerings built for credibility and conversion.</h2>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 gap-6 reveal">
+          <div class="card rounded-[26px] p-7 hover:-translate-y-1 transition duration-300">
+            <div class="text-gold text-sm uppercase tracking-luxe">01</div>
+            <h3 class="serif text-3xl mt-3">Speaking</h3>
+            <p class="mt-4 text-muted leading-8">Keynotes and panels on branding, leadership, and clear communication.</p>
+          </div>
+          <div class="card rounded-[26px] p-7 hover:-translate-y-1 transition duration-300">
+            <div class="text-gold text-sm uppercase tracking-luxe">02</div>
+            <h3 class="serif text-3xl mt-3">Consulting</h3>
+            <p class="mt-4 text-muted leading-8">Strategic advice for founders and brands that need sharper positioning.</p>
+          </div>
+          <div class="card rounded-[26px] p-7 hover:-translate-y-1 transition duration-300">
+            <div class="text-gold text-sm uppercase tracking-luxe">03</div>
+            <h3 class="serif text-3xl mt-3">Writing & Brand Guidance</h3>
+            <p class="mt-4 text-muted leading-8">Editorial messaging, brand voice, and authority-building content systems.</p>
+          </div>
+          <div class="card rounded-[26px] p-7 hover:-translate-y-1 transition duration-300">
+            <div class="text-gold text-sm uppercase tracking-luxe">04</div>
+            <h3 class="serif text-3xl mt-3">Business & Life Guidance</h3>
+            <p class="mt-4 text-muted leading-8">Grounded direction for people and teams navigating growth or change.</p>
+          </div>
+          <div class="card rounded-[26px] p-7 hover:-translate-y-1 transition duration-300 md:col-span-2 xl:col-span-1">
+            <div class="text-gold text-sm uppercase tracking-luxe">05</div>
+            <h3 class="serif text-3xl mt-3">Marketing Leadership</h3>
+            <p class="mt-4 text-muted leading-8">Brand strategy and marketing leadership for premium positioning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDIBILITY -->
+    <section id="credibility" class="py-20 lg:py-28 bg-cream/70 section-border">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[.95fr_1.05fr] gap-10 items-start reveal">
+          <div>
+            <div class="kicker text-gold mb-4">Credibility</div>
+            <h2 class="serif text-4xl sm:text-5xl leading-none">Trust is built in layers.</h2>
+            <p class="mt-6 text-muted leading-8 max-w-xl">
+              Keep this section tight and specific. Real proof beats vague praise. The layout should feel curated, not padded.
+            </p>
+          </div>
+
+          <div class="grid gap-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div class="card rounded-[24px] p-6">
+                <div class="text-gold text-xs uppercase tracking-luxe">Testimonial</div>
+                <p class="mt-4 text-lg leading-8">“Prashansa brings clarity, calm, and a level of judgment that instantly raises the quality of the conversation.”</p>
+              </div>
+              <div class="card rounded-[24px] p-6">
+                <div class="text-gold text-xs uppercase tracking-luxe">Media / Features</div>
+                <p class="mt-4 text-lg leading-8">Featured in conversations around branding, leadership, and the business of thoughtful communication.</p>
+              </div>
+            </div>
+            <div class="card rounded-[24px] p-6">
+              <div class="grid sm:grid-cols-3 gap-6 text-sm text-brown/80">
+                <div><span class="block serif text-4xl text-gold">08</span> signature pieces</div>
+                <div><span class="block serif text-4xl text-gold">15+</span> milestones</div>
+                <div><span class="block serif text-4xl text-gold">1</span> premium standard</div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-sm text-brown/55">
+              <div class="py-4 rounded-2xl border border-line bg-white/55">Logo 1</div>
+              <div class="py-4 rounded-2xl border border-line bg-white/55">Logo 2</div>
+              <div class="py-4 rounded-2xl border border-line bg-white/55">Logo 3</div>
+              <div class="py-4 rounded-2xl border border-line bg-white/55">Logo 4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center reveal">
+        <div class="kicker text-gold mb-4">Philosophy</div>
+        <h2 class="serif text-4xl sm:text-6xl leading-tight">
+          Clarity is premium. Substance is memorable. Restraint is modern.
+        </h2>
+        <p class="mt-8 text-muted leading-8 text-lg max-w-2xl mx-auto">
+          The brand should communicate composure, intelligence, and commercial seriousness — without sounding generic, dramatic, or overdesigned.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 lg:py-28 bg-cream/70 section-border">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-10 items-start reveal">
+          <div>
+            <div class="kicker text-gold mb-4">Contact</div>
+            <h2 class="serif text-4xl sm:text-5xl leading-none">Start with a direct conversation.</h2>
+            <p class="mt-6 text-muted leading-8 max-w-xl">
+              For speaking requests, consulting, editorial collaborations, or brand partnerships, use this form as the first point of contact.
+            </p>
+          </div>
+
+          <form class="card rounded-[32px] p-6 sm:p-8 lg:p-10">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <label class="block">
+                <span class="text-sm font-medium">Name</span>
+                <input class="field mt-2 w-full rounded-2xl px-4 py-3" type="text" placeholder="Your name" />
+              </label>
+              <label class="block">
+                <span class="text-sm font-medium">Email</span>
+                <input class="field mt-2 w-full rounded-2xl px-4 py-3" type="email" placeholder="you@example.com" />
+              </label>
+            </div>
+            <div class="mt-5">
+              <label class="block">
+                <span class="text-sm font-medium">Subject</span>
+                <input class="field mt-2 w-full rounded-2xl px-4 py-3" type="text" placeholder="Speaking, consultation, collaboration..." />
+              </label>
+            </div>
+            <div class="mt-5">
+              <label class="block">
+                <span class="text-sm font-medium">Message</span>
+                <textarea class="field mt-2 w-full rounded-2xl px-4 py-3 min-h-40" placeholder="Tell us what you need and why it matters."></textarea>
+              </label>
+            </div>
+            <div class="mt-6 flex flex-col sm:flex-row gap-4 sm:items-center">
+              <button type="button" class="px-7 py-4 rounded-full btn-dark font-medium">Send Inquiry</button>
+              <p class="text-sm text-muted">Minimal, professional, and built for qualified requests.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line py-10 bg-white/45">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="serif text-2xl">Prashansa Pawar</div>
+        <div class="text-sm text-muted mt-1">Author • Founder & CEO of The Life Guidance Center</div>
+      </div>
+      <div class="text-sm text-muted">© <span id="year"></span> Prashansa Pawar. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</body>
+</html>
+
